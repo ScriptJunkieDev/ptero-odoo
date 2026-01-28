@@ -37,11 +37,11 @@ jobs:
 
       - name: Build and push
         uses: docker/build-push-action@v6
+        env:
+          BUILDKIT_PROGRESS: plain
         with:
           context: .
           push: true
-          build-args: |
-            ODOO_VERSION=${{ matrix.odoo }}
           tags: |
-            ${{ steps.img.outputs.IMAGE }}:odoo-${{ matrix.odoo }}
-            ${{ steps.img.outputs.IMAGE }}:odoo-${{ matrix.odoo }}-sha-${{ github.sha }}
+            ${{ steps.img.outputs.IMAGE }}:odoo-16
+            ${{ steps.img.outputs.IMAGE }}:odoo-16-sha-${{ github.sha }}
