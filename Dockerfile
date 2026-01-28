@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Base tools + certs
 RUN set -eux; \
   apt-get update -y; \
-  apt-get install -y --no-install-recommends ca-certificates wget gnupg dirmngr; \
+  apt-get install -y --no-install-recommends ca-certificates wget gnupg dirmngr bash coreutils; \
   rm -rf /var/lib/apt/lists/*
 
 # Odoo repo + install
